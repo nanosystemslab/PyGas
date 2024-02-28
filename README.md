@@ -2,7 +2,6 @@
 
 [![Release](https://img.shields.io/github/v/release/nanosystemslab/pygas)](https://img.shields.io/github/v/release/nanosystemslab/pygas)
 [![Build status](https://img.shields.io/github/actions/workflow/status/nanosystemslab/pygas/main.yml?branch=main)](https://github.com/nanosystemslab/pygas/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/nanosystemslab/pygas/branch/main/graph/badge.svg)](https://codecov.io/gh/nanosystemslab/pygas)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/nanosystemslab/pygas)](https://img.shields.io/github/commit-activity/m/nanosystemslab/pygas)
 [![License](https://img.shields.io/github/license/nanosystemslab/pygas)](https://img.shields.io/github/license/nanosystemslab/pygas)
 
