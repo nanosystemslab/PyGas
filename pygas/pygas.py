@@ -68,6 +68,7 @@ class AlicatFlow:
         except Exception as e:
             print(f"Error polling data: {e}")
             return None
+        return None
 
     def stop_stream(self, unit_id: str) -> None:
         """
@@ -120,6 +121,7 @@ class AlicatFlow:
         except Exception as e:
             print(f"Error querying available gases: {e}")
             return None
+        return None
 
     def change_gas(self, unit_id: str, gas_num: str) -> Optional[str]:
         """
@@ -149,6 +151,7 @@ class AlicatFlow:
         except Exception as e:
             print(f"Error changing gas: {e}")
             return None
+        return None
 
     def lock_display(self, unit_id: str) -> None:
         """
@@ -222,6 +225,7 @@ class AlicatFlow:
         except Exception as e:
             print(f"Error setting units: {e}")
             return None
+        return None
 
     def query_unit_val_static(self, unit_id: str) -> Optional[str]:
         """
@@ -369,6 +373,7 @@ class AlicatPressure:
         except Exception as e:
             print(f"Error polling data: {e}")
             return None
+        return None
 
     def set_units(self, unit_id: str) -> Optional[str]:
         """
@@ -398,6 +403,7 @@ class AlicatPressure:
         except Exception as e:
             print(f"Error setting units: {e}")
             return None
+        return None
 
 
 if __name__ == "__main__":
