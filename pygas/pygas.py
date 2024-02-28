@@ -1,13 +1,5 @@
-import argparse
-import os
-
 # OTHER
-import logging, time
-from signal import signal, SIGINT
-import sys
-import math
 import serial
-from queue import Queue, Empty
 
 
 class alicat_flow:
@@ -105,9 +97,7 @@ class alicat_flow:
         volumetric flow = 4, mass flow = 5,
         """
         #   statistic_value      group(0:static, 1:group)      unit_value    override
-        self.ser.write(
-            f"{unit_id}DCU {static_value} {group} {unit_value} {override}\r".encode()
-        )
+        self.ser.write(f"{unit_id}DCU {static_value} {group} {unit_value} {override}\r".encode())
         msg = ""
         count = 0
         while msg == "":
@@ -119,9 +109,7 @@ class alicat_flow:
                 return msg
             elif count == 5:
                 count = 0
-                self.ser.write(
-                    f"{unit_id}DCU {static_value} {group} {unit_value} {override}\r".encode()
-                )
+                self.ser.write(f"{unit_id}DCU {static_value} {group} {unit_value} {override}\r".encode())
 
     def query_unit_val_static(self, unit_id):
         self.ser.write(f"{unit_id}DCU 69\r".encode())
@@ -140,12 +128,11 @@ class alicat_flow:
                 self.ser.write(f"{unit_id}DCU 5\r".encode())
 
     def baud_rate(self, unit_id):
-        new_baud_rate = input("New baud rate: ")
         # Baud rates: 2400,9600,19200,38400,57600,115200
         self.ser.write(f"{unit_id}NCB {self.baudrate}\r".encode())
 
     def change_unit_id(self, unit_id, new_unit_id):
-        self.ser.write(f"{curr_unit_id}@ {new_unit_id}\r".encode())
+        self.ser.write(f"{unit_id}@ {new_unit_id}\r".encode())
 
 
 class alicat_pressure:
