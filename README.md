@@ -11,14 +11,14 @@ PyGas is a Python library designed to provide seamless control and interaction w
 - **Github repository**: <https://github.com/nanosystemslab/pygas/>
 - **Documentation** <https://nanosystemslab.github.io/pygas/>
 
-## Alicat Flow and Pressure Meters
+# Alicat Flow and Pressure Meters
 
 PyGas is compatible with Alicat flow and pressure meters. You can find more information about these devices on Alicat's official website:
 
-### Alicat M-Series Mass Flow Meter
+## Alicat M-Series Mass Flow Meter
 Link for the [Alicat Mass Flow Meters](https://www.alicat.com/models/m-gas-mass-flow-meters/)
 
-#### Quick Specifications
+### Quick Specifications
 
 **Mass Flow Ranges**
 : 0.5 SCCM–5000 SLPM
