@@ -16,23 +16,33 @@ PyGas is a Python library designed to provide seamless control and interaction w
 PyGas is compatible with Alicat flow and pressure meters. You can find more information about these devices on Alicat's official website:
 
 ### Alicat M-Series Mass Flow Meter
-
+Link for the [Alicat Mass Flow Meters](https://www.alicat.com/models/m-gas-mass-flow-meters/)
 #### Quick Specifications
 
-- **Mass Flow Ranges**: 0.5 SCCM–5000 SLPM
-- **Accuracy**:
-  - Standard: ±0.6% of reading
-  - High: ±0.5% of reading
-- **Measurement Range**: 0.01–100% of full scale
-- **Response Time**:
-  - Measurement Response: 10 ms
-  - Control Response: 30 ms
-- **Multi-gas Calibration**: 98+ pre-loaded gases
-- **Repeatability**: 
-  - Greater of ±0.1% of reading or ±0.02% of full scale
-- **Communications**: Analog, RS–232, RS–485, DeviceNet, EtherCAT, EtherNet/IP, TCP/IP, Modbus RTU, PROFIBUS, PROFINET
-
-- [Alicat Mass Flow Meters](https://www.alicat.com/models/m-gas-mass-flow-meters/)
++----------------------+---------------------------------+
+| Mass Flow Ranges     | 0.5 SCCM–5000 SLPM              |
++----------------------+---------------------------------+
+| Accuracy             |                                 |
+|    - Standard        | ±0.6% of reading                |
+|    - High            | ±0.5% of reading                |
++----------------------+---------------------------------+
+| Measurement Range    | 0.01–100% of full scale         |
++----------------------+---------------------------------+
+| Response Time        |                                 |
+|    - Measurement     | 10 ms                           |
+|    - Control         | 30 ms                           |
++----------------------+---------------------------------+
+| Multi-gas Calibration| 98+ pre-loaded gases            |
++----------------------+---------------------------------+
+| Repeatability        |                                 |
+|    - Standard        | Greater of ±0.1% of reading     |
+|                      | or ±0.02% of full scale         |
++----------------------+---------------------------------+
+| Communications       | Analog, RS–232, RS–485,         |
+|                      | DeviceNet, EtherCAT, EtherNet/IP,|
+|                      | TCP/IP, Modbus RTU, PROFIBUS,   |
+|                      | PROFINET                        |
++----------------------+---------------------------------+
 ### Alicat P-Series Pressure Transducer
 
 #### Quick Specifications
