@@ -240,10 +240,9 @@ class AlicatFlow:
             while msg == "":
                 data = self.ser.readline()
                 count += 1
-                data = data.decode(errors="ignore")
-                print(data)
-                if len(data) >= 10:
-                    msg = msg + data
+                data_str = data.decode(errors="ignore")  # Decode data to string
+                if len(data_str) >= 10:
+                    msg = msg + data_str
                     return msg
                 elif count == 5:
                     count = 0
@@ -387,9 +386,9 @@ class AlicatPressure:
             count: int = 0
             while msg == "":
                 data: bytes = self.ser.readline()
-                data = data.decode(errors="ignore")
-                if (f"{unit_id}" in data) and ("\r" in data):
-                    msg = msg + data
+                data_str = data.decode(errors="ignore")
+                if (f"{unit_id}" in data_str) and ("\r" in data_str):
+                    msg = msg + data_str
                     if "\r" in msg:
                         print(msg)
                 elif count == 10:
