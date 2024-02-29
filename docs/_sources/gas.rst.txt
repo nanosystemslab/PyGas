@@ -1,0 +1,127 @@
+Alicat Devices
+==============
+
+The Alicat devices module provides interfaces to control and interact with Alicat Mass Flow Meters and Pressure Transducers.
+
+AlicatFlow Class
+----------------
+
+.. autoclass:: pygas.AlicatFlow
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+   The ``AlicatFlow`` class represents an interface for controlling Alicat flow meters. It provides methods to start and stop data streaming, poll data, tare the device, query available gases, change gas types, lock and unlock the device display, read streaming data, set units, query static unit value, set baud rates, and change unit IDs.
+
+   Initialization of the class:
+
+   .. automethod:: __init__
+
+   Starting the data stream:
+
+   .. automethod:: start_stream
+
+   Polling data from the device:
+
+   .. automethod:: poll_data
+
+   Stopping the data stream:
+
+   .. automethod:: stop_stream
+
+   Taring the device:
+
+   .. automethod:: tare
+
+   Querying available gases:
+
+   .. automethod:: available_gases
+
+   Changing the gas type:
+
+   .. automethod:: change_gas
+
+   Locking the device display:
+
+   .. automethod:: lock_display
+
+   Unlocking the device display:
+
+   .. automethod:: unlock_display
+
+   Reading the streaming data:
+
+   .. automethod:: read_stream
+
+   Setting the units:
+
+   .. automethod:: set_units
+
+   Querying static unit value:
+
+   .. automethod:: query_unit_val_static
+
+   Setting the baud rate:
+
+   .. automethod:: baud_rate
+
+   Changing the unit ID:
+
+   .. automethod:: change_unit_id
+
+
+AlicatPressure Class
+--------------------
+
+.. autoclass:: pygas.AlicatPressure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+   The ``AlicatPressure`` class provides an interface for controlling Alicat Pressure Transducers. It includes functionality to start and stop streaming, perform taring, read streaming data, poll data, and set units.
+
+   Initialization of the class:
+
+   .. automethod:: __init__
+
+   Starting the data stream:
+
+   .. automethod:: start_stream
+
+   Stopping the data stream:
+
+   .. automethod:: stop_stream
+
+   Taring the device:
+
+   .. automethod:: tare
+
+   Reading the streaming data:
+
+   .. automethod:: read_stream
+
+   Polling data:
+
+   .. automethod:: poll_data
+
+   Setting the units:
+
+   .. automethod:: set_units
+
+
+Usage Example
+-------------
+
+The following example demonstrates how to use the ``AlicatFlow`` and ``AlicatPressure`` classes to interact with the devices:
+
+.. code-block:: python
+
+   if __name__ == "__main__":
+       alicat_flow = AlicatFlow()
+       unit_id = input("Enter the current unit ID: ")
+       alicat_flow.stop_stream(unit_id)
+       gas_num = input("Enter the gas number: ")
+       alicat_flow.change_gas(unit_id, gas_num)
+       data = alicat_flow.poll_data(unit_id)
+       print(data)
+
