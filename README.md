@@ -20,15 +20,29 @@ Link for the [Alicat Mass Flow Meters](https://www.alicat.com/models/m-gas-mass-
 
 #### Quick Specifications
 
-| Property             | Standard             | High                |
-|----------------------|----------------------|---------------------|
-| Mass Flow Ranges     | 0.5 SCCM–5000 SLPM   |                     |
-| Accuracy             | ±0.6% of reading     | ±0.5% of reading    |
-| Measurement Range    | 0.01–100% of full scale |                  |
-| Response Time        | Measurement: 10 ms   | Control: 30 ms      |
-| Multi-gas Calibration| 98+ pre-loaded gases |                     |
-| Repeatability        | Greater of ±0.1% of reading or ±0.02% of full scale | |
-| Communications       | Analog, RS–232, RS–485, DeviceNet, EtherCAT, EtherNet/IP, TCP/IP, Modbus RTU, PROFIBUS, PROFINET | |
+**Mass Flow Ranges**
+: 0.5 SCCM–5000 SLPM
+
+**Accuracy**
+: Standard: ±0.6% of reading
+: High: ±0.5% of reading
+
+**Measurement Range**
+: 0.01–100% of full scale
+
+**Response Time**
+: Measurement: 10 ms
+: Control: 30 ms
+
+**Multi-gas Calibration**
+: 98+ pre-loaded gases
+
+**Repeatability**
+: Greater of ±0.1% of reading or ±0.02% of full scale
+
+**Communications**
+: Analog, RS–232, RS–485, DeviceNet, EtherCAT, EtherNet/IP, TCP/IP, Modbus RTU, PROFIBUS, PROFINET
+
 ### Alicat P-Series Pressure Transducer
 
 #### Quick Specifications
