@@ -124,4 +124,3 @@ The following example demonstrates how to use the ``AlicatFlow`` and ``AlicatPre
        alicat_flow.change_gas(unit_id, gas_num)
        data = alicat_flow.poll_data(unit_id)
        print(data)
-
