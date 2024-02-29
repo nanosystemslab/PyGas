@@ -44,4 +44,3 @@ Detailed documentation of the AlicatPressure class and its methods.
 
    .. automethod:: set_units
         :no-index:
-

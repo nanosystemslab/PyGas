@@ -11,17 +11,17 @@ First, we instantiate an `AlicatFlow` object and use it to stop streaming, chang
 
     # Initialize the AlicatFlow object
     alicat_flow = AlicatFlow()
-    
+
     # Get the current unit ID from the user
     unit_id: str = input("Current unit_id: ")
-    
+
     # Stop the data stream for the specified unit
     alicat_flow.stop_stream(unit_id)
-    
+
     # Change the gas type based on user input
     gas_num: str = input("Gas num: ")
     alicat_flow.change_gas(unit_id, gas_num)
-    
+
     # Poll data for the specified unit and print it
     data: Optional[str] = alicat_flow.poll_data(unit_id)
     print(data)
@@ -32,11 +32,11 @@ Similarly, for interacting with an Alicat pressure transducer, you can initializ
 
     # Initialize the AlicatPressure object
     alicat_pressure = AlicatPressure()
-    
+
     # Start streaming data for a specified unit
     unit_id = input("Enter unit ID for pressure transducer: ")
     alicat_pressure.start_stream(unit_id)
-    
+
     # Example function call to read the stream (implementation not shown)
     # alicat_pressure.read_stream()
 
