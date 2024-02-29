@@ -4,8 +4,9 @@
 [![Build status](https://img.shields.io/github/actions/workflow/status/nanosystemslab/pygas/main.yml?branch=main)](https://github.com/nanosystemslab/pygas/actions/workflows/main.yml?query=branch%3Amain)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/nanosystemslab/pygas)](https://img.shields.io/github/commit-activity/m/nanosystemslab/pygas)
 [![License](https://img.shields.io/github/license/nanosystemslab/pygas)](https://img.shields.io/github/license/nanosystemslab/pygas)
+[![DOI](https://zenodo.org/badge/732228171.svg)](https://zenodo.org/doi/10.5281/zenodo.10724912)
 
-Python library to control Alicat flow and pressure meter.
+PyGas is a Python library designed to provide seamless control and interaction with Alicat flow and pressure meters. With PyGas, you can effortlessly communicate with Alicat devices, retrieve data, and control various parameters to meet your specific application requirements.
 
 - **Github repository**: <https://github.com/nanosystemslab/pygas/>
 - **Documentation** <https://nanosystemslab.github.io/pygas/>
@@ -41,6 +42,23 @@ To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookie
 - Add the API Token to your projects secrets with the name `PYPI_TOKEN` by visiting [this page](https://github.com/nanosystemslab/pygas/settings/secrets/actions/new).
 - Create a [new release](https://github.com/nanosystemslab/pygas/releases/new) on Github.
 - Create a new tag in the form `*.*.*`.
+
+## Citation
+
+If you use this project in your research, please cite it using the following BibTeX entry:
+
+```bibtex
+@software{pyinfuse,
+  author       = {Nakamura, Matthew and Murillo Martinez, Andrea, and Renzo Clauido, Josh},
+  title        = {pygas: Python library to control Alicat flow and pressure meter},
+  month        = feb,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v0.0.1},
+  doi          = {10.5281/zenodo.10724912},
+  url          = {https://zenodo.org/records/10724913}
+}
+```
 
 For more details, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/cicd/#how-to-trigger-a-release).
 
