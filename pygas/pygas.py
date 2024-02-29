@@ -250,6 +250,7 @@ class AlicatFlow:
         except Exception as e:
             print(f"Error querying static unit value: {e}")
             return None
+        return None
 
     def baud_rate(self, unit_id: str) -> None:
         """
