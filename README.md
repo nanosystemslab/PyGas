@@ -19,7 +19,6 @@ Link to the [Alicat M–Series: Mass Flow Meter](https://www.alicat.com/models/m
 
 Link to the [Alicat P–Series: Absolute and Gauge Pressure Transducer](https://www.alicat.com/models/p-absolute-and-gauge-pressure-transducers/)
 
-
 ## Citation
 
 If you use this project in your research, please cite it using the following BibTeX entry:
