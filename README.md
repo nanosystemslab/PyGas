@@ -48,7 +48,7 @@ To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookie
 If you use this project in your research, please cite it using the following BibTeX entry:
 
 ```bibtex
-@software{pyinfuse,
+@software{pygas,
   author       = {Nakamura, Matthew and Murillo Martinez, Andrea, and Renzo Clauido, Josh},
   title        = {pygas: Python library to control Alicat flow and pressure meter},
   month        = feb,
