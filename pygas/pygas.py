@@ -193,36 +193,31 @@ class AlicatFlow:
         except Exception as e:
             print(f"Error reading stream: {e}")
 
-    def set_units(
-        self, unit_id: str, static_value: str, unit_value: str, group: str = "1", override: str = "0"
-    ) -> Optional[str]:
+    def set_units(self, unit_id: str) -> Optional[str]:
         """
         Sets the units for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
-            static_value (str): The static value to set.
-            unit_value (str): The unit value to set.
-            group (str, optional): The group value. Defaults to "1".
-            override (str, optional): The override value. Defaults to "0".
 
         Returns:
             Optional[str]: The response message from the device.
         """
         try:
-            self.ser.write(f"{unit_id}DCU {static_value} {group} {unit_value} {override}\r".encode())
-            msg = ""
-            count = 0
+            self.ser.write(f"{unit_id}DCU 2 61 700 0\r".encode())
+            msg: str = ""
+            count: int = 0
             while msg == "":
-                data = self.ser.readline()
-                count += 1
-                data = data.decode(errors="ignore")
-                if len(data) > 3:
-                    msg = msg + data
-                    return msg
-                elif count == 5:
-                    count = 0
-                    self.ser.write(f"{unit_id}DCU {static_value} {group} {unit_value} {override}\r".encode())
+                data: bytes = self.ser.readline()
+                data_str = data.decode(errors="ignore")
+                if (f"{unit_id}" in data_str) and ("\r" in data_str):
+                    msg = msg + data_str
+                    if "\r" in msg:
+                        print(msg)
+                elif count == 10:
+                    self.ser.write(f"{unit_id}DCU 2 61 700 0\r".encode())
+            else:
+                return msg
         except Exception as e:
             print(f"Error setting units: {e}")
             return None
