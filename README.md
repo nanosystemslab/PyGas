@@ -1,4 +1,4 @@
-# pygas
+# PyGas
 
 [![Release](https://img.shields.io/github/v/release/nanosystemslab/pygas)](https://img.shields.io/github/v/release/nanosystemslab/pygas)
 [![Build status](https://img.shields.io/github/actions/workflow/status/nanosystemslab/pygas/main.yml?branch=main)](https://github.com/nanosystemslab/pygas/actions/workflows/main.yml?query=branch%3Amain)
@@ -11,37 +11,48 @@ PyGas is a Python library designed to provide seamless control and interaction w
 - **Github repository**: <https://github.com/nanosystemslab/pygas/>
 - **Documentation** <https://nanosystemslab.github.io/pygas/>
 
-## Getting started with your project
+## Alicat Flow and Pressure Meters
 
-First, create a repository on GitHub with the same name as this project, and then run the following commands:
+PyGas is compatible with Alicat flow and pressure meters. You can find more information about these devices on Alicat's official website:
 
-```bash
-git init -b main
-git add .
-git commit -m "init commit"
-git remote add origin git@github.com:nanosystemslab/pygas.git
-git push -u origin main
-```
+### Alicat M-Series Mass Flow Meter
 
-Finally, install the environment and the pre-commit hooks with
+#### Quick Specifications
 
-```bash
-make install
-```
+- **Mass Flow Ranges**: 0.5 SCCM–5000 SLPM
+- **Accuracy**:
+  - Standard: ±0.6% of reading
+  - High: ±0.5% of reading
+- **Measurement Range**: 0.01–100% of full scale
+- **Response Time**:
+  - Measurement Response: 10 ms
+  - Control Response: 30 ms
+- **Multi-gas Calibration**: 98+ pre-loaded gases
+- **Repeatability**: 
+  - Greater of ±0.1% of reading or ±0.02% of full scale
+- **Communications**: Analog, RS–232, RS–485, DeviceNet, EtherCAT, EtherNet/IP, TCP/IP, Modbus RTU, PROFIBUS, PROFINET
 
-You are now ready to start development on your project!
-The CI/CD pipeline will be triggered when you open a pull request, merge to main, or when you create a new release.
+- [Alicat Mass Flow Meters](https://www.alicat.com/models/m-gas-mass-flow-meters/)
+### Alicat P-Series Pressure Transducer
 
-To finalize the set-up for publishing to PyPi or Artifactory, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/publishing/#set-up-for-pypi).
-For activating the automatic documentation with MkDocs, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/mkdocs/#enabling-the-documentation-on-github).
-To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/codecov/).
+#### Quick Specifications
 
-## Releasing a new version
+- **Available Ranges**:
+  - PSIA: 0–3000 max; 0–15 min
+  - PSIG: 0–3000 max; 0–0.07 min
+  - PSID: 2 inH₂O to 500
+- **Accuracy**:
+  - Standard: ±0.25% of full scale
+  - High: ±0.125% of full scale
+- **Steady State Control Range**: 0.01–100% of full scale
+- **Response Time**:
+  - Measurement Response: 10 ms
+  - Control Response: 30 ms
+- **Repeatability**: 0.08% of full scale
+- **Communications**: Analog, RS–232, RS–485, DeviceNet, EtherCAT, EtherNet/IP, Modbus RTU, TCP/IP, PROFIBUS, PROFINET
 
-- Create an API Token on [Pypi](https://pypi.org/).
-- Add the API Token to your projects secrets with the name `PYPI_TOKEN` by visiting [this page](https://github.com/nanosystemslab/pygas/settings/secrets/actions/new).
-- Create a [new release](https://github.com/nanosystemslab/pygas/releases/new) on Github.
-- Create a new tag in the form `*.*.*`.
+- [Alicat Pressure Transducers](https://www.alicat.com/models/p-absolute-and-gauge-pressure-transducers/)
+
 
 ## Citation
 
@@ -50,7 +61,7 @@ If you use this project in your research, please cite it using the following Bib
 ```bibtex
 @software{pygas,
   author       = {Nakamura, Matthew and Murillo Martinez, Andrea, and Renzo Clauido, Josh},
-  title        = {pygas: Python library to control Alicat flow and pressure meter},
+  title        = {PyGas: Python library to control Alicat flow and pressure meter},
   month        = feb,
   year         = 2024,
   publisher    = {Zenodo},
@@ -59,8 +70,6 @@ If you use this project in your research, please cite it using the following Bib
   url          = {https://zenodo.org/records/10724913}
 }
 ```
-
-For more details, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/cicd/#how-to-trigger-a-release).
 
 ---
 
