@@ -142,9 +142,9 @@ class AlicatFlow:
             while msg == "":
                 data = self.ser.readline()
                 count += 1
-                data = data.decode(errors="ignore")
-                if len(data) > 3:
-                    msg = msg + data
+                data_str: str = data.decode(errors="ignore")  # Decode data to string
+                if len(data_str) > 3:
+                    msg = msg + data_str
                     return msg
                 elif count == 5:
                     count = 0
