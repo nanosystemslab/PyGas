@@ -13,9 +13,10 @@ PyGas is a Python library designed to provide seamless control and interaction w
 
 ## Alicat Flow and Pressure Meters
 
-PyGas is compatible with Alicat flow and pressure meters. The M-Series Mass Flow Meters offer detailed flow analytics by simultaneously measuring mass flow, volumetric flow, gas pressure, and temperature for an array of gases, maintaining precision across a spectrum from 0.01% to 100% of full scale. In conjunction with these meters, the P-Series Pressure Transducers provide exact measurements with NIST-traceable accuracy to ±0.125% of full scale for non-corrosive gases. These transducers are adept at measuring both absolute and gauge pressure, featuring swift response times upon activation. They are designed for versatility and accuracy, displaying readings in a selection of engineering units for clear and immediate data interpretation, suitable for diverse applications and environments. You can find more information about these devices on Alicat's official website:
+The Alicat M-Series Mass Flow Meters offer detailed flow analytics by simultaneously measuring mass flow, volumetric flow, gas pressure, and temperature for an array of gases, maintaining precision across a spectrum from 0.01% to 100% of full scale. In conjunction with these meters, the P-Series Pressure Transducers provide exact measurements with NIST-traceable accuracy to ±0.125% of full scale for non-corrosive gases. These transducers are adept at measuring both absolute and gauge pressure, featuring swift response times upon activation. They are designed for versatility and accuracy, displaying readings in a selection of engineering units for clear and immediate data interpretation, suitable for diverse applications and environments. You can find more information about these devices on Alicat's official website:
 
 Link to the [Alicat M–Series: Mass Flow Meter](https://www.alicat.com/models/m-gas-mass-flow-meters/)
+
 Link to the [Alicat P–Series: Absolute and Gauge Pressure Transducer](https://www.alicat.com/models/p-absolute-and-gauge-pressure-transducers/)
 
 
