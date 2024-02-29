@@ -11,57 +11,12 @@ PyGas is a Python library designed to provide seamless control and interaction w
 - **Github repository**: <https://github.com/nanosystemslab/pygas/>
 - **Documentation** <https://nanosystemslab.github.io/pygas/>
 
-# Alicat Flow and Pressure Meters
+## Alicat Flow and Pressure Meters
 
-PyGas is compatible with Alicat flow and pressure meters. You can find more information about these devices on Alicat's official website:
+PyGas is compatible with Alicat flow and pressure meters. The M-Series Mass Flow Meters offer detailed flow analytics by simultaneously measuring mass flow, volumetric flow, gas pressure, and temperature for an array of gases, maintaining precision across a spectrum from 0.01% to 100% of full scale. In conjunction with these meters, the P-Series Pressure Transducers provide exact measurements with NIST-traceable accuracy to ±0.125% of full scale for non-corrosive gases. These transducers are adept at measuring both absolute and gauge pressure, featuring swift response times upon activation. They are designed for versatility and accuracy, displaying readings in a selection of engineering units for clear and immediate data interpretation, suitable for diverse applications and environments. You can find more information about these devices on Alicat's official website:
 
-## Alicat M-Series Mass Flow Meter
-Link for the [Alicat Mass Flow Meters](https://www.alicat.com/models/m-gas-mass-flow-meters/)
-
-### Quick Specifications
-
-**Mass Flow Ranges**
-: 0.5 SCCM–5000 SLPM
-
-**Accuracy**
-: Standard: ±0.6% of reading
-: High: ±0.5% of reading
-
-**Measurement Range**
-: 0.01–100% of full scale
-
-**Response Time**
-: Measurement: 10 ms
-: Control: 30 ms
-
-**Multi-gas Calibration**
-: 98+ pre-loaded gases
-
-**Repeatability**
-: Greater of ±0.1% of reading or ±0.02% of full scale
-
-**Communications**
-: Analog, RS–232, RS–485, DeviceNet, EtherCAT, EtherNet/IP, TCP/IP, Modbus RTU, PROFIBUS, PROFINET
-
-### Alicat P-Series Pressure Transducer
-
-#### Quick Specifications
-
-- **Available Ranges**:
-  - PSIA: 0–3000 max; 0–15 min
-  - PSIG: 0–3000 max; 0–0.07 min
-  - PSID: 2 inH₂O to 500
-- **Accuracy**:
-  - Standard: ±0.25% of full scale
-  - High: ±0.125% of full scale
-- **Steady State Control Range**: 0.01–100% of full scale
-- **Response Time**:
-  - Measurement Response: 10 ms
-  - Control Response: 30 ms
-- **Repeatability**: 0.08% of full scale
-- **Communications**: Analog, RS–232, RS–485, DeviceNet, EtherCAT, EtherNet/IP, Modbus RTU, TCP/IP, PROFIBUS, PROFINET
-
-- [Alicat Pressure Transducers](https://www.alicat.com/models/p-absolute-and-gauge-pressure-transducers/)
+Link to the [Alicat M–Series: Mass Flow Meter](https://www.alicat.com/models/m-gas-mass-flow-meters/)
+Link to the [Alicat P–Series: Absolute and Gauge Pressure Transducer](https://www.alicat.com/models/p-absolute-and-gauge-pressure-transducers/)
 
 
 ## Citation
