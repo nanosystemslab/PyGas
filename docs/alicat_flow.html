@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alicat Flow Meter Interface &mdash; PyGas v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2fea6348"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using AlicatFlow and AlicatPressure" href="examples.html" />
+    <link rel="prev" title="Alicat Pressure Transducer Interface" href="alicat_pressure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyGas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="alicat_pressure.html">Alicat Pressure Transducer Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Alicat Flow Meter Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pygas.AlicatFlow"><code class="docutils literal notranslate"><span class="pre">AlicatFlow</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.available_gases"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.available_gases()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.baud_rate"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.baud_rate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.change_gas"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.change_gas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.change_unit_id"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.change_unit_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.lock_display"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.lock_display()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.poll_data"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.poll_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.query_unit_val_static"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.query_unit_val_static()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.read_stream"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.read_stream()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.set_units"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.set_units()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.start_stream"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.start_stream()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.stop_stream"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.stop_stream()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.tare"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.tare()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pygas.AlicatFlow.unlock_display"><code class="docutils literal notranslate"><span class="pre">AlicatFlow.unlock_display()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Using AlicatFlow and AlicatPressure</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyGas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Alicat Flow Meter Interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/alicat_flow.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="alicat-flow-meter-interface">
+<h1>Alicat Flow Meter Interface<a class="headerlink" href="#alicat-flow-meter-interface" title="Link to this heading"></a></h1>
+<p>Detailed documentation of the AlicatFlow class and its methods.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pygas.AlicatFlow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygas.</span></span><span class="sig-name descname"><span class="pre">AlicatFlow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/dev/tty.usbserial-AU0585NK'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">19200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pygas.AlicatFlow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents an interface to control Alicat flow meters.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">AlicatFlow</span></code> class represents an interface for controlling Alicat flow meters. It provides methods to start and stop data streaming, poll data, tare the device, query available gases, change gas types, lock and unlock the device display, read streaming data, set units, query static unit value, set baud rates, and change unit IDs.</p>
+<p>Initialization of the class:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/dev/tty.usbserial-AU0585NK'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">19200</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Initializes the AlicatFlow object.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (str): The serial port to communicate with the device.
+baudrate (int): The baud rate for serial communication.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Starting the data stream:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">start_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Starts streaming data from the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Polling data from the device:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">poll_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span></dt>
+<dd><p>Polls data for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Stopping the data stream:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">stop_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Stops streaming data from the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Taring the device:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">tare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Performs taring on the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Querying available gases:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">available_gases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span></dt>
+<dd><p>Queries available gases from the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The queried data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Changing the gas type:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">change_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span></dt>
+<dd><p>Changes the gas type for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.
+gas_num (str): The gas number to be set.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Locking the device display:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">lock_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Locks the display of the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Unlocking the device display:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">unlock_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Unlocks the display of the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Reading the streaming data:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">read_stream</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Reads and prints the streaming data from the device.</p>
+</dd></dl>
+
+<p>Setting the units:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span></dt>
+<dd><p>Sets the units for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Querying static unit value:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">query_unit_val_static</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span></dt>
+<dd><p>Queries the static unit value for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Setting the baud rate:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">baud_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Sets the baud rate for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Changing the unit ID:</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">change_unit_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Changes the unit ID of the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The current ID of the unit.
+new_unit_id (str): The new ID to set for the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.available_gases">
+<span class="sig-name descname"><span class="pre">available_gases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.available_gases" title="Link to this definition"></a></dt>
+<dd><p>Queries available gases from the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The queried data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.baud_rate">
+<span class="sig-name descname"><span class="pre">baud_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.baud_rate" title="Link to this definition"></a></dt>
+<dd><p>Sets the baud rate for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.change_gas">
+<span class="sig-name descname"><span class="pre">change_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.change_gas" title="Link to this definition"></a></dt>
+<dd><p>Changes the gas type for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.
+gas_num (str): The gas number to be set.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.change_unit_id">
+<span class="sig-name descname"><span class="pre">change_unit_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.change_unit_id" title="Link to this definition"></a></dt>
+<dd><p>Changes the unit ID of the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The current ID of the unit.
+new_unit_id (str): The new ID to set for the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.lock_display">
+<span class="sig-name descname"><span class="pre">lock_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.lock_display" title="Link to this definition"></a></dt>
+<dd><p>Locks the display of the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.poll_data">
+<span class="sig-name descname"><span class="pre">poll_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.poll_data" title="Link to this definition"></a></dt>
+<dd><p>Polls data for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.query_unit_val_static">
+<span class="sig-name descname"><span class="pre">query_unit_val_static</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.query_unit_val_static" title="Link to this definition"></a></dt>
+<dd><p>Queries the static unit value for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.read_stream">
+<span class="sig-name descname"><span class="pre">read_stream</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.read_stream" title="Link to this definition"></a></dt>
+<dd><p>Reads and prints the streaming data from the device.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.set_units">
+<span class="sig-name descname"><span class="pre">set_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.set_units" title="Link to this definition"></a></dt>
+<dd><p>Sets the units for the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[str]: The response message from the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.start_stream">
+<span class="sig-name descname"><span class="pre">start_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.start_stream" title="Link to this definition"></a></dt>
+<dd><p>Starts streaming data from the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.stop_stream">
+<span class="sig-name descname"><span class="pre">stop_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.stop_stream" title="Link to this definition"></a></dt>
+<dd><p>Stops streaming data from the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.tare">
+<span class="sig-name descname"><span class="pre">tare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.tare" title="Link to this definition"></a></dt>
+<dd><p>Performs taring on the device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygas.AlicatFlow.unlock_display">
+<span class="sig-name descname"><span class="pre">unlock_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygas.AlicatFlow.unlock_display" title="Link to this definition"></a></dt>
+<dd><p>Unlocks the display of the specified unit.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unit_id (str): The ID of the unit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="alicat_pressure.html" class="btn btn-neutral float-left" title="Alicat Pressure Transducer Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Using AlicatFlow and AlicatPressure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Nanosystems Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
