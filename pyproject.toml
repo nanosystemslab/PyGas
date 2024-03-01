@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pygas"
+name = "PyGas"
 version = "0.0.1"
 description = "Python library to control Alicat flow and pressure meter."
 authors = ["Nanosystems Lab <fnslab@hawaii.edu>"]
