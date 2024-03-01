@@ -1,15 +1,15 @@
 # PyGas
 
-[![Release](https://img.shields.io/github/v/release/nanosystemslab/pygas)](https://img.shields.io/github/v/release/nanosystemslab/pygas)
-[![Build status](https://img.shields.io/github/actions/workflow/status/nanosystemslab/pygas/main.yml?branch=main)](https://github.com/nanosystemslab/pygas/actions/workflows/main.yml?query=branch%3Amain)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/nanosystemslab/pygas)](https://img.shields.io/github/commit-activity/m/nanosystemslab/pygas)
-[![License](https://img.shields.io/github/license/nanosystemslab/pygas)](https://img.shields.io/github/license/nanosystemslab/pygas)
+[![Release](https://img.shields.io/github/v/release/nanosystemslab/PyGas)](https://img.shields.io/github/v/release/nanosystemslab/PyGas)
+[![Build status](https://img.shields.io/github/actions/workflow/status/nanosystemslab/PyGas/main.yml?branch=main)](https://github.com/nanosystemslab/PyGas/actions/workflows/main.yml?query=branch%3Amain)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/nanosystemslab/PyGas)](https://img.shields.io/github/commit-activity/m/nanosystemslab/PyGas)
+[![License](https://img.shields.io/github/license/nanosystemslab/PyGas)](https://img.shields.io/github/license/nanosystemslab/PyGas)
 [![DOI](https://zenodo.org/badge/732228171.svg)](https://zenodo.org/doi/10.5281/zenodo.10724912)
 
 PyGas is a Python library designed to provide seamless control and interaction with Alicat flow and pressure meters. With PyGas, you can effortlessly communicate with Alicat devices, retrieve data, and control various parameters to meet your specific application requirements.
 
-- **Github repository**: <https://github.com/nanosystemslab/pygas/>
-- **Documentation** <https://nanosystemslab.github.io/pygas/>
+- **Github repository**: <https://github.com/nanosystemslab/PyGas/>
+- **Documentation** <https://nanosystemslab.github.io/PyGas/>
 
 ## Alicat Flow and Pressure Meters
 
