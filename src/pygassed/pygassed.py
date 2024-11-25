@@ -178,8 +178,7 @@ class AlicatFlow:
             print(f"Error unlocking display: {e}")
 
     def read_stream(self) -> None:
-        """Read and prints the streaming data from the device.
-        """
+        """Read and prints the streaming data from the device."""
         try:
             msg = ""
             while 1:
