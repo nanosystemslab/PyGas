@@ -10,7 +10,7 @@ class AlicatFlow:
 
     Attributes:
         port (str): The serial port to communicate with the device (default
-        '/dev/tty.usbserial-AU0585NK').
+                    '/dev/tty.usbserial-AU0585NK').
         baudrate (int): The baud rate for serial communication (default 19200).
     """
 
@@ -21,7 +21,7 @@ class AlicatFlow:
 
         Args:
             port (str): The serial port to communicate with the device (default
-            '/dev/tty.usbserial-AU0585NK').
+                        '/dev/tty.usbserial-AU0585NK').
             baudrate (int): The baud rate for serial communication (default 19200).
         """
         self.port = port
@@ -275,7 +275,7 @@ class AlicatPressure:
 
     Attributes:
         port (str): The serial port to connect to (default
-        "/dev/tty.usbserial-AU0585NK").
+                    "/dev/tty.usbserial-AU0585NK").
         baudrate (int): The baud rate for the serial communication (default 19200).
     """
 
@@ -286,7 +286,7 @@ class AlicatPressure:
 
         Args:
             port (str): The serial port to connect to (default
-            "/dev/tty.usbserial-AU0585NK").
+                        "/dev/tty.usbserial-AU0585NK").
             baudrate (int): The baud rate for the serial communication (default 19200).
         """
         self.port: str = port
