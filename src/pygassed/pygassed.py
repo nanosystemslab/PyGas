@@ -8,6 +8,11 @@ import serial
 class AlicatFlow:
     """
     Represents an interface to control Alicat flow meters.
+
+    Attributes:
+        port (str): The serial port to communicate with the device (default
+        '/dev/tty.usbserial-AU0585NK').
+        baudrate (int): The baud rate for serial communication (default 19200).
     """
 
     def __init__(
@@ -17,7 +22,8 @@ class AlicatFlow:
         Initialize the AlicatFlow object.
 
         Args:
-            port (str): The serial port to communicate with the device (default '/dev/tty.usbserial-AU0585NK').
+            port (str): The serial port to communicate with the device (default
+            '/dev/tty.usbserial-AU0585NK').
             baudrate (int): The baud rate for serial communication (default 19200).
         """
         self.port = port
@@ -281,6 +287,15 @@ class AlicatFlow:
 
 
 class AlicatPressure:
+    """
+    Represents an interface to control Alicat pressure meters.
+
+    Attributes:
+        port (str, optional): The serial port to connect to (default
+        "/dev/tty.usbserial-AU0585NK").
+        baudrate (int, optional): The baud rate for the serial communication (default 19200).
+    """
+
     def __init__(
         self, port: str = "/dev/tty.usbserial-AU0585NK", baudrate: int = 19200
     ) -> None:
@@ -288,7 +303,8 @@ class AlicatPressure:
         Initialize an AlicatPressure object.
 
         Args:
-            port (str, optional): The serial port to connect to (default "/dev/tty.usbserial-AU0585NK").
+            port (str, optional): The serial port to connect to (default
+            "/dev/tty.usbserial-AU0585NK").
             baudrate (int, optional): The baud rate for the serial communication (default 19200).
         """
         self.port: str = port
