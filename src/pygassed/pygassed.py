@@ -6,8 +6,7 @@ import serial
 
 
 class AlicatFlow:
-    """
-    Represents an interface to control Alicat flow meters.
+    """Represents an interface to control Alicat flow meters.
 
     Attributes:
         port (str): The serial port to communicate with the device (default
@@ -18,8 +17,7 @@ class AlicatFlow:
     def __init__(
         self, port: str = "/dev/tty.usbserial-AU0585NK", baudrate: int = 19200
     ) -> None:
-        """
-        Initialize the AlicatFlow object.
+        """Initialize the AlicatFlow object.
 
         Args:
             port (str): The serial port to communicate with the device (default
@@ -38,8 +36,7 @@ class AlicatFlow:
         )
 
     def start_stream(self, unit_id: str) -> None:
-        """
-        Start streaming data from the device.
+        """Start streaming data from the device.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -50,8 +47,7 @@ class AlicatFlow:
             print(f"Error starting stream: {e}")
 
     def poll_data(self, unit_id: str) -> Optional[str]:
-        """
-        Poll data for the specified unit.
+        """Poll data for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -80,8 +76,7 @@ class AlicatFlow:
             return None
 
     def stop_stream(self, unit_id: str) -> None:
-        """
-        Stop streaming data from the device.
+        """Stop streaming data from the device.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -92,8 +87,7 @@ class AlicatFlow:
             print(f"Error stopping stream: {e}")
 
     def tare(self, unit_id: str) -> None:
-        """
-        Perform taring on the device.
+        """Perform taring on the device.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -104,8 +98,7 @@ class AlicatFlow:
             print(f"Error taring: {e}")
 
     def available_gases(self, unit_id: str) -> Optional[str]:
-        """
-        Query available gases from the device.
+        """Query available gases from the device.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -134,8 +127,7 @@ class AlicatFlow:
         return None
 
     def change_gas(self, unit_id: str, gas_num: str) -> Optional[str]:
-        """
-        Change the gas type for the specified unit.
+        """Change the gas type for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -164,8 +156,7 @@ class AlicatFlow:
         return None
 
     def lock_display(self, unit_id: str) -> None:
-        """
-        Lock the display of the specified unit.
+        """Lock the display of the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -176,8 +167,7 @@ class AlicatFlow:
             print(f"Error locking display: {e}")
 
     def unlock_display(self, unit_id: str) -> None:
-        """
-        Unlock the display of the specified unit.
+        """Unlock the display of the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -188,8 +178,7 @@ class AlicatFlow:
             print(f"Error unlocking display: {e}")
 
     def read_stream(self) -> None:
-        """
-        Read and prints the streaming data from the device.
+        """Read and prints the streaming data from the device.
         """
         try:
             msg = ""
@@ -203,8 +192,7 @@ class AlicatFlow:
             print(f"Error reading stream: {e}")
 
     def set_units(self, unit_id: str) -> Optional[str]:
-        """
-        Set the units for the specified unit.
+        """Set the units for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -232,8 +220,7 @@ class AlicatFlow:
             return None
 
     def query_unit_val_static(self, unit_id: str) -> Optional[str]:
-        """
-        Query the static unit value for the specified unit.
+        """Query the static unit value for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -261,8 +248,7 @@ class AlicatFlow:
         return None
 
     def baud_rate(self, unit_id: str) -> None:
-        """
-        Set the baud rate for the specified unit.
+        """Set the baud rate for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -273,8 +259,7 @@ class AlicatFlow:
             print(f"Error setting baud rate: {e}")
 
     def change_unit_id(self, unit_id: str, new_unit_id: str) -> None:
-        """
-        Change the unit ID of the specified unit.
+        """Change the unit ID of the specified unit.
 
         Args:
             unit_id (str): The current ID of the unit.
@@ -287,8 +272,7 @@ class AlicatFlow:
 
 
 class AlicatPressure:
-    """
-    Represents an interface to control Alicat pressure meters.
+    """Represents an interface to control Alicat pressure meters.
 
     Attributes:
         port (str, optional): The serial port to connect to (default
@@ -299,8 +283,7 @@ class AlicatPressure:
     def __init__(
         self, port: str = "/dev/tty.usbserial-AU0585NK", baudrate: int = 19200
     ) -> None:
-        """
-        Initialize an AlicatPressure object.
+        """Initialize an AlicatPressure object.
 
         Args:
             port (str, optional): The serial port to connect to (default
@@ -324,8 +307,7 @@ class AlicatPressure:
         )
 
     def start_stream(self, unit_id: str) -> None:
-        """
-        Start streaming data for the specified unit.
+        """Start streaming data for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -333,8 +315,7 @@ class AlicatPressure:
         self.ser.write(f"{unit_id}@=@\r".encode())
 
     def stop_stream(self, unit_id: str) -> None:
-        """
-        Stop streaming data for the specified unit.
+        """Stop streaming data for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -342,8 +323,7 @@ class AlicatPressure:
         self.ser.write(f"@@={unit_id}\r".encode())
 
     def tare(self, unit_id: str) -> None:
-        """
-        Tare the specified unit.
+        """Tare the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -361,8 +341,7 @@ class AlicatPressure:
                     print(msg)
 
     def poll_data(self, unit_id: str) -> Optional[str]:
-        """
-        Poll data for the specified unit.
+        """Poll data for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
@@ -391,8 +370,7 @@ class AlicatPressure:
             return None
 
     def set_units(self, unit_id: str) -> Optional[str]:
-        """
-        Set the units for the specified unit.
+        """Set the units for the specified unit.
 
         Args:
             unit_id (str): The ID of the unit.
