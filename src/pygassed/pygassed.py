@@ -180,9 +180,9 @@ class AlicatFlow:
     def read_stream(self) -> None:
         """Read and prints the streaming data from the device."""
         try:
-            msg = ""
+            msg: str = ""
             while 1:
-                data = self.ser.readline()
+                data: bytes = self.ser.readline()
                 if len(data) > 0:
                     msg = msg + data.decode()
                     if "\r" in msg:
@@ -330,14 +330,17 @@ class AlicatPressure:
         self.ser.write(f"{unit_id}PC\r".encode())
 
     def read_stream(self) -> None:
-        """Read the streaming data."""
-        msg: str = ""
-        while 1:
-            data: bytes = self.ser.readline()
-            if len(data) > 0:
-                msg = msg + data.decode(errors="ignore")
-                if "\r" in msg:
-                    print(msg)
+        """Read and print the streaming data from the device."""
+        try:
+            msg: str = ""
+            while 1:
+                data: bytes = self.ser.readline()
+                if len(data) > 0:
+                    msg = msg + data.decode(errors="ignore")
+                    if "\r" in msg:
+                        print(msg)
+        except Exception as e:
+            print(f"Error reading stream: {e}")
 
     def poll_data(self, unit_id: str) -> Optional[str]:
         """Poll data for the specified unit.
