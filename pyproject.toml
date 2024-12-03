@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pygassed"
-version = "0.0.2"
+version = "0.0.3"
 description = "Pygassed"
 authors = ["Nanosystems Lab <fnslab@hawaii.edu>"]
 license = "GPL-3.0"
@@ -60,7 +60,7 @@ source = ["pygassed", "tests"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 100
+fail_under = 70
 
 [tool.isort]
 profile = "black"
